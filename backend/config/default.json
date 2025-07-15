@@ -1,0 +1,21 @@
+{
+  "server": {
+    "port": 3000,
+    "host": "localhost"
+  },
+  "database": {
+    "uri": ""
+  },
+  "auth": {
+    "jwt_secret": "",
+    "jwt_expires_in": ""
+  },
+  "cors": {
+    "allowed_origins": ["*"],
+    "allowed_methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "allowed_headers": ["Content-Type", "Authorization"]
+  },
+  "bcrypt": {
+    "salt_rounds": 10
+  }
+}
