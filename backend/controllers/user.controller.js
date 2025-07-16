@@ -1,4 +1,5 @@
 const fileManager = require("../utils/fileManager");
+const { generateResponse } = require("../utils/helper");
 
 const userController = {
   getAllUsers: async (req, res) => {},
@@ -13,7 +14,12 @@ const userController = {
 
       const user = users.find((user) => user.id === parseInt(id));
       if (!user) {
-        return res.status(404).json({ message: "User not found", data: null });
+        return res.status(404).json(generateResponse(
+          false,
+          "User not found",
+          null,
+          404
+        ));
       }
       res.status(200).json({ message: "User found", data: user });
     } catch (error) {
