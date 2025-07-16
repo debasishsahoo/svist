@@ -43,12 +43,24 @@ class FileManager{
     return data[index];
  }
  async deleteData(filename,id){
-    try{}
-    catch(error){}
+  const data = await this.readData(filename);
+    const index = data.findIndex((item) => item.id === parseInt(id));
+    if (index === -1) {
+      return null;
+    }
+    const deletedItem = data.splice(index, 1)[0];
+    await this.writeData(filename, data);
+    return deletedItem;
  }
  async appendData(filename,newItem){
-    try{}
-    catch(error){}
+   const data = await this.readData(filename);
+    const nextId =
+      data.length > 0 ? Math.max(...data.map((item) => item.id)) + 1 : 1;
+    newItem.id = nextId;
+    newItem.createdAt = new Date().toISOString();
+    data.push(newItem);
+    await this.writeData(filename, data);
+    return newItem;
  }
 }
 module.exports =new FileManager();
