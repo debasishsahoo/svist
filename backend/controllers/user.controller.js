@@ -6,9 +6,9 @@ const userController = {
   const {id}=req.params;
   console.log('id:', id)
 
-  const users=await fileManager.readData("users.json");
+  const users=await fileManager.readData("user.json");
   console.log('users:', users)
-  
+
   const user = users.find(user => user.id === parseInt(id));
   if(!user){
     return res.status(404).json({ message: "User not found",data:null });
