@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "description": "High-performance laptop",
+    "price": 999.99,
+    "category": "electronics",
+    "stock": 50,
+    "createdAt": "2024-01-10T08:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Coffee Mug",
+    "description": "Ceramic coffee mug",
+    "price": 12.99,
+    "category": "home",
+    "stock": 200,
+    "createdAt": "2024-01-12T12:30:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse",
+    "price": 29.99,
+    "category": "electronics",
+    "stock": 75,
+    "createdAt": "2024-01-14T16:45:00Z"
+  }
+]
