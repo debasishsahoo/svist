@@ -4,6 +4,12 @@ const userController = require('../controllers/user.controller');
 router.get('/', userController.allUsers);
 router.get('/:id', userController.singleUser);
 
+
+
+
+
+
+
 router.post('/', (req, res) => {
   res.send('User route-POST with body: ' + JSON.stringify(req.body));
 });

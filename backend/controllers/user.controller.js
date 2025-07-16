@@ -1,5 +1,5 @@
 const userController = {
-  allUsers: async (req, res) => {
+  allUsers: async (req, res) => { 
     try {
       // Logic to fetch all users
       res.status(200).json({ message: "All users fetched successfully" });

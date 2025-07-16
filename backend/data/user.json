@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30,
+    "role": "admin",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "age": 25,
+    "role": "user",
+    "createdAt": "2024-01-16T14:20:00Z",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "age": 35,
+    "role": "user",
+    "createdAt": "2024-01-17T09:15:00Z",
+    "isActive": false
+  }
+]
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30,
+    "role": "admin",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "age": 25,
+    "role": "user",
+    "createdAt": "2024-01-16T14:20:00Z",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "age": 35,
+    "role": "user",
+    "createdAt": "2024-01-17T09:15:00Z",
+    "isActive": false
+  }
+]
