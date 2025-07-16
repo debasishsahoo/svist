@@ -1,21 +1,18 @@
+const fileManager = require("../utils/fileManager");
+
 const userController = {
-  allUsers: async (req, res) => { 
+  getUserById: async (req, res) => {
     try {
-      // Logic to fetch all users
-      res.status(200).json({ message: "All users fetched successfully" });
+  const {id}=req.param;
+  const users=await fileManager.readFile("users.json");
+  const user = users.find(user => user.id === parseInt(id));
+  if(!user){
+    return res.status(404).json({ message: "User not found",data:null });
+  }
+  res.status(200).json({message: "User found",data: user });
+
     } catch (error) {
-      res.status(500).json({ error: "Failed to fetch users" });
-    }
-  },
-  singleUser: async (req, res) => {
-    try {
-      // Logic to fetch a single user
-      res.status(200).json({
-        message: "Single user fetched successfully",
-        id: req.params.id,
-      });
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch users" });
+     res.status(500).json({message: "Failed to fetch user",data: null }); 
     }
   },
 };
