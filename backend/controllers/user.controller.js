@@ -5,7 +5,7 @@ const userController = {
   getAllUsers: async (req, res) => {
     try {
       let users = await fileManager.readData("user.json");
-      res.json(generateResponse(true, "Users retrieved successfully", result));
+      res.json(generateResponse(true, "Users retrieved successfully", users));
     } catch (error) {
        res
         .status(500)
