@@ -2,7 +2,16 @@ const fileManager = require("../utils/fileManager");
 const { generateResponse } = require("../utils/helper");
 
 const userController = {
-  getAllUsers: async (req, res) => {},
+  getAllUsers: async (req, res) => {
+    try {
+      let users = await fileManager.readData("user.json");
+      res.json(generateResponse(true, "Users retrieved successfully", result));
+    } catch (error) {
+       res
+        .status(500)
+        .json(generateResponse(false, "Failed to fetch users", null, 500));
+    }
+  },
 
   getUserById: async (req, res) => {
     try {
