@@ -56,7 +56,8 @@ const userController = {
         .json(generateResponse(false, "Failed to create user", null, 500));
     }
   },
-  updateUsers: async (req, res) => {},
+  updateUsers: async (req, res) => {
+  },
   deleteUsers: async (req, res) => {},
   getUserStats: async (req, res) => {},
 };
