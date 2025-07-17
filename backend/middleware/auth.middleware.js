@@ -31,6 +31,17 @@ const authenticateToken = (req, res, next) => {
   );
 };
 
+const authorize = (roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return res
+        .status(403)
+        .json(generateResponse(false, "Insufficient permissions", null, 403));
+    }
+    next();
+  };
+};
+
 const login = (req, res) => {
   const { email, password } = req.body;
   // Simple mock authentication
@@ -52,5 +63,6 @@ const login = (req, res) => {
 
 module.exports = {
   authenticateToken,
+  authorize,
   login,
 };

@@ -25,14 +25,5 @@
     "role": "user",
     "createdAt": "2024-01-17T09:15:00Z",
     "isActive": false
-  },
-  {
-    "name": "Debasish Sahoo",
-    "email": "deb@example.com",
-    "age": 18,
-    "role": "user",
-    "isActive": true,
-    "id": 4,
-    "createdAt": "2025-07-17T07:15:29.817Z"
   }
 ]

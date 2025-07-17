@@ -69,11 +69,12 @@ const userController = {
     try {
       const { id } = req.params;
       const updateData = req.body;
+
       // Check if email already exists (if updating email)
       if (updateData.email) {
         const users = await fileManager.readData("user.json");
         const existingUser = users.find(
-          (u) => u.email === updateData.email && u.id === parseInt(id) //! ==
+          (u) => u.email === updateData.email && u.id !== parseInt(id)
         );
 
         if (existingUser) {
