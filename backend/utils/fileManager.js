@@ -28,7 +28,7 @@ class FileManager{
       throw error;
     }
  }
- async updateData(filename,updateData){
+ async updateData(filename,updateData,id){
    const data = await this.readData(filename);
     const index = data.findIndex((item) => item.id === parseInt(id));
     if (index === -1) {

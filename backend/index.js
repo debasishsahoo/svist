@@ -6,12 +6,15 @@ require('dotenv').config();
 
 // Importing  routes
 const userRoutes = require('./routes/user.routes');
+
+const { login } = require("./middleware/auth.middleware");
   
 const app = express();
 const PORT = process.env.PORT || config.get('server.port') || 3000;
 const HOST = process.env.HOST || config.get('server.host') || 'localhost';
 
 app.use(express.json());
+app.post("/api/auth/login", login);
 app.use('/api/users', userRoutes);
 
 
