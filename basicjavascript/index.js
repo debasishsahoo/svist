@@ -10,12 +10,16 @@
 // console.log("Step 3");
 // console.log("Step 4");
 
+
+
 //  async function fetchData() {
 //   const response = await  fetch('https://jsonplaceholder.typicode.com/todos/1');
 //   const data =   await response.json();
 //   console.log(data);
 // }
 // fetchData();
+
+
 
 // async function fetchData() {
 //   try {
@@ -31,17 +35,21 @@
 // }
 // fetchData();
 
-function fetchData(){
-fetch("https://jsonplaceholder.typicode.com/todos/1")
-  .then(response => {
-    if (!response.ok) throw new Error('Network error');
-    return response.json();
-  })
-  .then(data => console.log(data))
-  .catch(error => console.error("Error fetching data:", error.message));
-}
 
-fetchData();
+
+
+
+// function fetchData(){
+// fetch("https://jsonplaceholder.typicode.com/todos/1")
+//   .then(response => {
+//     if (!response.ok) throw new Error('Network error');
+//     return response.json();
+//   })
+//   .then(data => console.log(data))
+//   .catch(error => console.error("Error fetching data:", error.message));
+// }
+
+// fetchData();
 
 
 
