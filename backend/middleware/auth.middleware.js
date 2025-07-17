@@ -1,12 +1,35 @@
 const jwt = require("jsonwebtoken");
-const { generateResponse } = require("../utils/helpers");
+const { generateResponse } = require("../utils/helper");
 //Configuration file
 const config = require("config");
 require("dotenv").config();
 
-const authMiddleware = (req, res, next) => {};
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
 
-const authorize = (roles = {});
+  if (!token) {
+    return res
+      .status(401)
+      .json(generateResponse(false, "Access token required", null, 401));
+  }
+
+  jwt.verify(
+    token,
+    process.env.JWT_SECRET ||
+      config.get("auth.jwt_secret") ||
+      "87b4539bddbfc5e6a1a62c87acba28187224",
+    (err, user) => {
+      if (err) {
+        return res
+          .status(403)
+          .json(generateResponse(false, "Invalid or expired token", null, 403));
+      }
+      req.user = user;
+      next();
+    }
+  );
+};
 
 const login = (req, res) => {
   const { email, password } = req.body;
@@ -28,7 +51,6 @@ const login = (req, res) => {
 };
 
 module.exports = {
-  authMiddleware,
-  authorize,
+  authenticateToken,
   login,
 };
