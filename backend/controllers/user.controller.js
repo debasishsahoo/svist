@@ -57,6 +57,40 @@ const userController = {
     }
   },
   updateUsers: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
+      // Check if email already exists (if updating email)
+      if (updateData.email) {
+        const users = await fileManager.readData("user.json");
+        const existingUser = users.find(
+          (u) => u.email === updateData.email && u.id === parseInt(id) //! ==
+        );
+
+        if (existingUser) {
+          return res
+            .status(400)
+            .json(generateResponse(false, "Email already exists", null, 400));
+        }
+      }
+      const updatedUser = await fileManager.updateData(
+        "user.json",
+        id,
+        updateData
+      );
+      if (!updatedUser) {
+        return res
+          .status(404)
+          .json(generateResponse(false, "User not found", null, 404));
+      }
+      res.json(
+        generateResponse(true, "User updated successfully", updatedUser)
+      );
+    } catch (error) {
+      res
+        .status(500)
+        .json(generateResponse(false, "Failed to update user", null, 500));
+    }
   },
   deleteUsers: async (req, res) => {},
   getUserStats: async (req, res) => {},
