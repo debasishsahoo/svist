@@ -84,7 +84,7 @@ const userController = {
           .json(generateResponse(false, "User not found", null, 404));
       }
       res.json(
-        generateResponse(true, "User updated successfully", updatedUser)
+        generateResponse(true, "User updated successfully", updatedUser, 200)
       );
     } catch (error) {
       res
@@ -92,7 +92,25 @@ const userController = {
         .json(generateResponse(false, "Failed to update user", null, 500));
     }
   },
-  deleteUsers: async (req, res) => {},
+  deleteUsers: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const deletedUser = await fileManager.deleteData("user.json", id);
+
+      if (!deletedUser) {
+        return res
+          .status(404)
+          .json(generateResponse(false, "User not found", null, 404));
+      }
+      res.json(
+        generateResponse(true, "User deleted successfully", deletedUser)
+      );
+    } catch (error) {
+      res
+        .status(500)
+        .json(generateResponse(false, "Failed to delete user", null, 500));
+    }
+  },
   getUserStats: async (req, res) => {},
 };
 module.exports = userController;
