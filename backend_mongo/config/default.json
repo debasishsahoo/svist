@@ -1,0 +1,6 @@
+{
+  "db": "mongodb://localhost:27017/debasish",
+  "port": 5000,
+  "jwtPrivateKey": "12345678910",
+  "requiresAuth": true
+}
