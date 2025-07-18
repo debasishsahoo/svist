@@ -26,7 +26,7 @@ mongoose.connect(config.get('db'))
   .catch(err => winston.error('Could not connect to MongoDB...', err));
 
 // Routes
-//app.use('/api/auth', require('./routes/user.route'));
+app.use('/api/auth', require('./routes/user.route'));
 
 // Error handling
 app.use(errorHandler);
