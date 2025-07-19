@@ -1,0 +1,14 @@
+[
+    {
+        "_id": 1,
+        "title": "SQl",
+        "price": "$25",
+        "author": "Sanadip Roy"
+    },
+    {
+        "_id": 2,
+        "title": "NoSql",
+        "price": "$35",
+        "author": "Sanadip Roy"
+    }
+]

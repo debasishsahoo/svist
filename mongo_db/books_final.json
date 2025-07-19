@@ -1,0 +1,50 @@
+[
+  {
+    "_id": 5,
+    "title": "SQl Query",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 3,
+    "title": "NoSql Query",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 1,
+    "title": "Express JS",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 2,
+    "title": "React JS",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 6,
+    "title": "Angular JS",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 4,
+    "title": "Vanila JS",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 7,
+    "title": "Mongo",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 7,
+    "title": "Node",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  }
+]

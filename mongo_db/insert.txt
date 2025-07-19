@@ -1,0 +1,9 @@
+use mydb/svist
+show collections
+
+ db.books.insertMany([
+  { title: 'Express JS', price: "$25", author: "Sanadip Roy" },
+  { title: 'React JS', price: "$35", author: "Sanadip Roy" },
+  { title: 'Angular JS', price: "$65", author: "Sanadip Roy" },
+  { title: 'Vanila JS', price: "$15", author: "Sanadip Roy" }
+])
