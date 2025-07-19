@@ -1,0 +1,59 @@
+bson=[
+    {
+        "id": "cb7d21b7-b1cf-4a15-af0a-40025f3543f9",
+        "firstName": "John",
+        "lastName": "Doe",
+        "maxScore": 4912,
+        "minScore": -123.14,
+        "scoreHistory": [
+          {
+            "date": "2017-04-12",
+            "score": 123
+          },
+          {
+            "date": "2019-10-03",
+            "score": 628
+          },
+          {
+            "date": "2021-07-26",
+            "score": 845
+          }
+        ],
+        "address": {
+          "number": 4,
+          "street": "Privet Drive",
+          "city": "Little Whinging",
+          "zip": 4859,
+          "country": "Great Britain"
+        },
+        "active": true,
+        "selected": false,
+        "selectedDate": null
+      }
+]
+
+
+//JSON Types
+// #String
+// Sequence of zero or more Unicode characters.
+// Strings are delimited with double quotation marks and support a backslash escaping syntax.
+
+// #Number
+// Signed decimal number that may contain a fractional part and may use expone­ntial E notation.
+
+// #Object
+// Collection of name–value pairs where the names (also called keys) are strings.
+
+// #Array
+// Ordered list of zero or more elements, each of which may be of any type.
+// Arrays use square bracket notation with comma-­sep­arated elements.
+
+// #Boolean
+// Either of the values true or false.
+
+// #null
+// Empty value, using the word null.
+
+
+
+

@@ -7,3 +7,153 @@ show collections
   { title: 'Angular JS', price: "$65", author: "Sanadip Roy" },
   { title: 'Vanila JS', price: "$15", author: "Sanadip Roy" }
 ])
+
+db.books.insertMany([
+   {_id:1, title: 'SQl', price: "$25", author: "Sanadip Roy" },
+   {_id:2, title: 'NoSql', price: "$35", author: "Sanadip Roy" },
+])
+ db.books.insertMany([
+    {_id:2, title: 'SQl Query', price: "$25", author: "Sanadip Roy" },
+    {_id:3,title: 'NoSql Query', price: "$35", author: "Sanadip Roy" },
+])
+
+db.books.deleteMany({})
+
+
+
+
+
+db.books.insertMany([
+  {
+    "_id": 5,
+    "title": "SQl Query",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 3,
+    "title": "NoSql Query",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 1,
+    "title": "Express JS",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 2,
+    "title": "React JS",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 6,
+    "title": "Angular JS",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 4,
+    "title": "Vanila JS",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 7,
+    "title": "Mongo",
+    "price": "$25",
+    "author": "Sanadip Roy"
+  },
+  {
+    "_id": 8,
+    "title": "Node",
+    "price": "$35",
+    "author": "Sanadip Roy"
+  }
+], { ordered: false })
+
+
+db.products.insertMany([
+    { "_id" : 1, "name" : "xPhone", "price" : 799, "releaseDate": ISODate("2011-05-14"), "spec" : { "ram" : 4, "screen" : 6.5, "cpu" : 2.66 },"color":["white","black"],"storage":[64,128,256]},
+    { "_id" : 2, "name" : "xTablet", "price" : 899, "releaseDate": ISODate("2011-09-01") , "spec" : { "ram" : 16, "screen" : 9.5, "cpu" : 3.66 },"color":["white","black","purple"],"storage":[128,256,512]},
+    { "_id" : 3, "name" : "SmartTablet", "price" : 899, "releaseDate": ISODate("2015-01-14"), "spec" : { "ram" : 12, "screen" : 9.7, "cpu" : 3.66 },"color":["blue"],"storage":[16,64,128]},
+    { "_id" : 4, "name" : "SmartPad", "price" : 699, "releaseDate": ISODate("2020-05-14"),"spec" : { "ram" : 8, "screen" : 9.7, "cpu" : 1.66 },"color":["white","orange","gold","gray"],"storage":[128,256,1024]},
+    { "_id" : 5, "name" : "SmartPhone", "price" : 599,"releaseDate": ISODate("2022-09-14"), "spec" : { "ram" : 4, "screen" : 5.7, "cpu" : 1.66 },"color":["white","orange","gold","gray"],"storage":[128,256]}
+
+
+    // # To Find All Record
+db.books.find({})  // {} is A blank Object
+
+// # Custom Query
+db.books.find({_id:10})
+
+
+// # Complex Custom Query
+   m
+   db.books.find(findQuery,showAttribute)
+
+
+
+// #Find One Return first inseeted Record
+db.books.findOne()
+// #Custom Query
+/const query={title:'Mongo'}
+db.books.findOne(query)
+// #Get First Inserted Record From Product Collection
+db.products.findOne()
+// #Get Custom Record From Product Collection
+db.products.findOne({_id:2})
+
+//1: TRUE(SHOW)
+//0: FALSE(Not Show)
+db.products.findOne({_id:5},{name:1})
+db.products.findOne({_id:5},{name:1,price:1})
+db.products.findOne({_id:5},{name:1,spec:1})
+db.products.findOne({_id:5},{name:1,_id:0})
+db.products.findOne({_id:5},{price:0,releaseDate:0})
+
+
+
+
+
+//#Return All Fields in Matching Document
+const query={price:899}
+db.products.find(query)
+
+//#Return Specified Fields including the _id Fields
+db.products.find({},{name:1,price:1})
+
+#Return Specified Fields but suppress the _id Fields
+db.products.find({},{ name:1,price:1,_id:0})
+
+#Return all Fields but except the some Fields
+db.products.find({_id:1},{releaseDate:0,spec:0,storage:0})
+
+#Return Fields in embedded Document
+db.products.find({ _id: 1 }, {'name': 1,'price': 1,'spec.screen': 1})
+     or
+db.products.find({ _id: 1 }, {name: 1,price: 1,spec: {screen:1}})
+
+//$eq Equal to Operator
+db.products
+  .find({ price: { $eq: 899 } })
+  .projection({ name: 1, price: 1 })
+  .sort({})
+  .limit(0);
+//Both Can Work and Write
+db.products
+  .find({ price: 899 })
+  .projection({ name: 1, price: 1 })
+  .sort({})
+  .limit(0);
+//Query From Embedded Document
+db.products
+  .find({ "spec.ram": { $eq: 4 } })
+  .projection({})
+  .sort({})
+  .limit(0);
+
+
+

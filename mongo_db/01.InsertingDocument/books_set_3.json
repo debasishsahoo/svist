@@ -1,0 +1,14 @@
+[
+    {
+        "_id": 2,
+        "title": "SQl Query",
+        "price": "$25",
+        "author": "Sanadip Roy"
+    },
+    {
+        "_id": 3,
+        "title": "NoSql Query",
+        "price": "$35",
+        "author": "Sanadip Roy"
+    }
+]
