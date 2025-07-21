@@ -1,0 +1,23 @@
+/* Basic button styles */
+.btn {
+  /* Add your desired base styles for the button here */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styles for the active button state */
+.btn-active {
+  background-color: green; /* Example active color */
+  color: white; /* Example active text color */
+  opacity: 1; /* Fully opaque when active */
+}
+
+/* Styles for the inactive button state */
+.btn-inactive {
+  background-color: lightgray; /* Example inactive color */
+  color: gray; /* Example inactive text color */
+  opacity: 0.5; /* Semi-transparent when inactive */
+  cursor: not-allowed; /* Indicate that the button is not interactable */
+}
