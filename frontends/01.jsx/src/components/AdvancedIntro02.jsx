@@ -12,16 +12,16 @@ const AdvancedIntro02 = () => {
   };
 
   return (
-    <div class="user-card">
-      <img src={user.img} alt="User Avatar" class="user-avatar" />
-      <div class="user-info">
-        <h2 class="user-name">{user.name}</h2>
-        <p class="user-title">{user.title}</p>
-        <p class="user-location">{user.location}</p>
+    <div className="user-card">
+      <img src={user.img} alt="User Avatar" className="user-avatar" />
+      <div className="user-info">
+        <h2 className="user-name">{user.name}</h2>
+        <p className="user-title">{user.title}</p>
+        <p className="user-location">{user.location}</p>
       </div>
-      <div class="user-actions">
-        <button class="message-btn">Message</button>
-        <a href="#" class="profile-link">
+      <div className="user-actions">
+        <button className="message-btn">Message</button>
+        <a href="#" className="profile-link">
           View Profile
         </a>
       </div>
