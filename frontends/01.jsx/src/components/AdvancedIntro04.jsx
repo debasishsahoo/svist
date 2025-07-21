@@ -28,7 +28,7 @@ const AdvancedIntro04 = () => {
 
   return (
     <>
-      <div>{styledElement}</div>;
+      <div>{styledElement}</div>
       <br />
       {conditionalStyling}
     </>
