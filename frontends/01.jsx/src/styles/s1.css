@@ -1,0 +1,90 @@
+/* Basic Card Styles */
+.user-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Internal spacing */
+  text-align: center; /* Centers content within the card */
+  max-width: 300px; /* Limits the card width */
+  margin: 20px auto; /* Centers the card horizontally and adds external space */
+  background-color: #fff; /* White background */
+}
+
+/* Avatar Styling */
+.user-avatar {
+  width: 100px; /* Avatar size */
+  height: 100px;
+  border-radius: 50%; /* Makes the avatar circular */
+  object-fit: cover; /* Ensures the image covers the area */
+  margin-bottom: 15px; /* Space below the avatar */
+}
+
+/* User Info Styling */
+.user-info .user-name {
+  font-size: 24px; /* Larger font for the name */
+  margin-bottom: 5px; /* Space below the name */
+}
+
+.user-info .user-title {
+  color: #777; /* Grey text for title */
+  font-size: 16px; /* Appropriate font size for the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.user-info .user-location {
+  font-size: 14px; /* Smaller font for location */
+  color: #999; /* Lighter grey for location */
+}
+
+/* Action Button Styling */
+.user-actions button {
+  background-color: #007bff; /* Blue background for the message button */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Indicates it's clickable */
+  margin-right: 10px; /* Space between buttons */
+}
+
+.user-actions a {
+  color: #007bff; /* Blue text for the profile link */
+  text-decoration: none; /* Removes underline from links */
+  font-size: 16px; /* Font size for the link */
+}
+
+/* Hover effects for interactivity */
+.user-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.user-actions button:hover {
+  opacity: 0.8; /* Slight fade on hover */
+}
+
+.user-actions a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .user-card {
+    max-width: 90%; /* Wider on smaller screens */
+    margin: 10px auto; /* Adjust margin */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .user-avatar {
+    width: 80px; /* Smaller avatar */
+    height: 80px;
+  }
+
+  .user-info .user-name {
+    font-size: 20px; /* Smaller name font */
+  }
+
+  .user-actions button,
+  .user-actions a {
+    padding: 8px 15px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button/link font size */
+  }
+}
