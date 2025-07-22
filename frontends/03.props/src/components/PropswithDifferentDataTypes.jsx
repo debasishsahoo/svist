@@ -1,8 +1,13 @@
+
+
+import avatar from './img/avatar.png'
+import './styles/user.css'
+
 const ProfileCard = () => {
   const userData = {
-    name: "Sarah Johnson",
-    email: "sarah@example.com",
-    avatar: "https://example.com/avatar.jpg"
+    name: "Debasish Sahoo",
+    email: "debasish.sahoo96@gmail.com",
+    avatar
   };
 
   const hobbies = ["Reading", "Photography", "Hiking", "Cooking"];
@@ -57,7 +62,7 @@ const UserProfile = (props) => {
 };
 
 
-import './styles/user.css'
+
 
 const PropswithDifferentDataTypes = () => {
     return (
