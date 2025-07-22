@@ -7,7 +7,7 @@ const LifecycleExample = () => {
   // Equivalent to componentDidMount
   useEffect(() => {
     console.log("Component mounted");
-    document.title = "React App";
+    document.title = "React App by Deb";
 
     // Cleanup function (equivalent to componentWillUnmount)
     return () => {

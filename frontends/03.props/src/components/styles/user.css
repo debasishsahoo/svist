@@ -1,0 +1,100 @@
+/* === User Profile Container === */
+.user-profile {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Profile Header Section === */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+
+.profile-header p {
+  margin: 0.3rem 0;
+  color: #718096;
+}
+
+/* === Status Tag === */
+.status {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+}
+
+.status.online {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.status.offline {
+  background-color: #fed7d7;
+  color: #742a2a;
+}
+
+/* === Profile Stats === */
+.profile-stats {
+  margin: 1rem 0;
+  color: #4a5568;
+}
+
+.profile-stats p {
+  margin: 0.4rem 0;
+}
+
+/* === Hobbies List === */
+.hobbies h3 {
+  margin-bottom: 0.5rem;
+  color: #2c5282;
+}
+
+.hobbies ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  color: #2d3748;
+}
+
+.hobbies li {
+  margin-bottom: 0.3rem;
+}
+
+/* === Button === */
+.user-profile button {
+  background-color: #3182ce;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.user-profile button:hover {
+  background-color: #2b6cb0;
+}
