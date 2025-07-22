@@ -15,6 +15,18 @@ a {
   text-decoration: none;
   color: inherit;
 }
+/* === App Layout === */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
 
 /* === Navbar Styles === */
 .navbar {
@@ -75,4 +87,12 @@ a {
 /* === Contact Page === */
 .contact-page {
   color: #155724;
+}
+
+.not-found-page{
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8d7da;
+  border-radius: 8px;
+  color: #721c24;
 }

@@ -1,3 +1,7 @@
 export default function Services() {
-  return <div className="p-4"><h1>Our Services</h1></div>;
+  return (
+    <div className="page services-page">
+      <h1>Our Services</h1>
+    </div>
+  );
 }
