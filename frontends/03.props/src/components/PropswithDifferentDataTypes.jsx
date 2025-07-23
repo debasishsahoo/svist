@@ -4,12 +4,14 @@ import avatar from './img/avatar.png'
 import './styles/user.css'
 
 const ProfileCard = () => {
+  //Object Data
   const userData = {
     name: "Debasish Sahoo",
     email: "debasish.sahoo96@gmail.com",
     avatar
   };
 
+  //Array Data
   const hobbies = ["Reading", "Photography", "Hiking", "Cooking"];
   const isOnline = true;
   const lastLogin = new Date();
