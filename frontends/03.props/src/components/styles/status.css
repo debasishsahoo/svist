@@ -1,0 +1,45 @@
+.app-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.status-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.status-success {
+  background-color: #e6f7e9;
+  color: #2e7d32;
+}
+
+.status-error {
+  background-color: #fdecea;
+  color: #d32f2f;
+}
+
+.status-warning {
+  background-color: #fff4e5;
+  color: #ff9800;
+}
+
+.status-info {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.user-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.user-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #ccc;
+}
