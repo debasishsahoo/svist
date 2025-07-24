@@ -17,5 +17,7 @@ router.get("/verify",authenticate,(req,res)=>{
     },
   });
 })
-router.post("/logout",authenticate,authController.logout)
+router.post("/logout",authenticate,(req,res)=>{
+  res.json({ message: "Logout successful" });
+})
 module.exports = router;
