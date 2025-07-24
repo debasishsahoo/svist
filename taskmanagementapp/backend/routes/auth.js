@@ -1,14 +1,16 @@
 const router = require("express").Router();
-const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+const authController = require('../controllers/authController');
 
-const generateToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE,
+router.post('/register',authController.register)
+router.post("/login",authController.login)
+router.get("/verify",(req,res)=>{
+  res.json({
+    user: {
+      id: req.user._id,
+      name: req.user.name,
+      email: req.user.email,
+    },
   });
-};
-router.post('/register')
-router.post("/login")
-router.get("/verify")
-router.post("/logout")
+})
+router.post("/logout",authController.logout)
 module.exports = router;
