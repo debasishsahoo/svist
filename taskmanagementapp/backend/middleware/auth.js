@@ -32,6 +32,6 @@ const authenticate=async(req,res,next)=>{
     res.status(500).json({ message: "Server error during authentication." });
   }
 }
-const authorize=(...roles)=>{}
 
-module.exports={authenticate,authorize}
+
+module.exports={authenticate}
