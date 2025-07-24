@@ -4,6 +4,7 @@ const User = require("../models/User");
 const authenticate=async(req,res,next)=>{
     try {
     const token = req.header("Authorization")?.replace("Bearer ", "");
+    console.log('token:', token)
 
     if (!token) {
       return res
@@ -12,7 +13,9 @@ const authenticate=async(req,res,next)=>{
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findById(decoded.userId);
+    console.log('decoded:', decoded)
+    const user = await User.findById(decoded.id);
+    console.log('user:', user)
 
     if (!user || !user.isActive) {
       return res
