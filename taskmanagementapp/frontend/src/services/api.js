@@ -6,13 +6,20 @@ class ApiService {
   }
 
   async request(endpoint, options = {}) {
-    
     const token = localStorage.getItem("token");
 
     const defaultOptions = {
       headers: {
         "Content-Type": "application/json",
         ...(token && { Authorization: `Bearer ${token}` }),
+      },
+    };
+    const config = {
+      ...defaultOptions,
+      ...options,
+      headers: {
+        ...defaultOptions.headers,
+        ...options.headers,
       },
     };
   }
