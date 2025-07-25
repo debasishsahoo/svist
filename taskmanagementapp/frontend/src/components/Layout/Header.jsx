@@ -18,7 +18,26 @@ const Header = () => {
           <h1>Task Manager</h1>
         </Link>
         <nav className="nav">
-            {user?():()}
+          {user ? (
+            <div className="nav-user">
+              <span className="welcome-text">Welcome, {user.name}</span>
+              <Link to="/tasks" className="nav-link">
+                Tasks
+              </Link>
+              <button className="btn btn-secondary" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="nav-auth">
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+              <Link to="/register" className="nav-link">
+                Register
+              </Link>
+            </div>
+          )}
         </nav>
       </div>
     </header>
