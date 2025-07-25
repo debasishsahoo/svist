@@ -30,5 +30,37 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
+  const login = async (email, password) => {
+    try {
+      const response = await authService.login(email, password);
+      localStorage.setItem("token", response.token);
+      setUser(response.user);
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+  const register = async (name, email, password) => {
+    try {
+      const response = await authService.register(name, email, password);
+      localStorage.setItem("token", response.token);
+      setUser(response.user);
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+  const logout = () => {
+    localStorage.removeItem("token");
+    setUser(null);
+  };
+  const value = {
+    user,
+    login,
+    register,
+    logout,
+    loading,
+  };
+
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
