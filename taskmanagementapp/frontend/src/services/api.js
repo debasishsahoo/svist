@@ -22,6 +22,19 @@ class ApiService {
         ...options.headers,
       },
     };
+    try {
+      const response = await fetch(`${this.baseURL}${endpoint}`, config);
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "API request failed");
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("API Error:", error);
+      throw error;
+    }
   }
 }
 
